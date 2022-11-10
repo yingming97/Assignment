@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1028805578809",
+    "project_id": "assignmentnetworking-82bce",
+    "storage_bucket": "assignmentnetworking-82bce.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1028805578809:android:394ec829d9a256f3e9fde8",
+        "android_client_info": {
+          "package_name": "pham.hien.assignment"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1028805578809-eupn9c4mr44ct8vd75ikmih1oo503jlb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyByoTKV_7SxOPpt9GH8mpoiwfqQH0Awfl4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1028805578809-eupn9c4mr44ct8vd75ikmih1oo503jlb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
