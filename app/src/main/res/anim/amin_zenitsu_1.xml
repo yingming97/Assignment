@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+    <translate
+        android:duration="1000"
+        android:fillAfter="true"
+        android:fromXDelta="-200%"
+        android:toXDelta="0" />
+    <alpha
+        android:duration="1000"
+        android:fillAfter="true"
+        android:fromAlpha="0"
+        android:startOffset="100"
+        android:toAlpha="1.0" />
+    <!--    <set-->
+    <!--        android:repeatMode="restart"-->
+    <!--        android:duration="1000"-->
+    <!--        android:fillAfter="true"-->
+    <!--        android:startOffset="1100"-->
+    <!--        android:repeatCount="infinite">-->
+    <!--    -->
+    <!--    </set>-->
+    <!--    <set-->
+    <!--        android:repeatMode="restart"-->
+    <!--        android:duration="1000"-->
+    <!--        android:fillAfter="true"-->
+    <!--        android:repeatCount="infinite"-->
+    <!--        android:startOffset="2100">-->
+    <!--        <translate-->
+    <!--            android:repeatCount="infinite"-->
+    <!--            android:fillAfter="true"-->
+    <!--            android:fromXDelta="30%"-->
+    <!--            android:toXDelta="200%" />-->
+    <!--        <alpha-->
+    <!--            android:repeatCount="infinite"-->
+    <!--            android:duration="1000"-->
+    <!--            android:fillAfter="true"-->
+    <!--            android:fromAlpha="1.0"-->
+    <!--            android:startOffset="100"-->
+    <!--            android:toAlpha="0" />-->
+    <!--    </set>-->
+
+
+    <!-- Move -->
+    <!--    <translate-->
+    <!--        android:duration="500"-->
+    <!--        android:fillAfter="true"-->
+    <!--        android:fromXDelta="0%p"-->
+    <!--        android:startOffset="300"-->
+    <!--        android:toXDelta="75%p" />-->
+    <!--    <translate-->
+    <!--        android:duration="500"-->
+    <!--        android:fillAfter="true"-->
+    <!--        android:fromYDelta="0%p"-->
+    <!--        android:startOffset="800"-->
+    <!--        android:toYDelta="70%p" />-->
+    <!--    <translate-->
+    <!--        android:duration="500"-->
+    <!--        android:fillAfter="true"-->
+    <!--        android:fromXDelta="0%p"-->
+    <!--        android:startOffset="1300"-->
+    <!--        android:toXDelta="-75%p" />-->
+    <!--    <translate-->
+    <!--        android:duration="500"-->
+    <!--        android:fillAfter="true"-->
+    <!--        android:fromYDelta="0%p"-->
+    <!--        android:startOffset="1500"-->
+    <!--        android:toYDelta="-70%p" />-->
+
+    <!-- Rotate 360 degrees -->
+    <!--    <rotate-->
+    <!--        android:duration="1000"-->
+    <!--        android:fromDegrees="0"-->
+    <!--        android:interpolator="@android:anim/cycle_interpolator"-->
+    <!--        android:pivotX="50%"-->
+    <!--        android:pivotY="50%"-->
+    <!--        android:repeatCount="infinite"-->
+    <!--        android:repeatMode="restart"-->
+    <!--        android:startOffset="3800"-->
+    <!--        android:toDegrees="360" />-->
+</set>

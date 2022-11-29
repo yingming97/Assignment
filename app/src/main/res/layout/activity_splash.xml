@@ -4,61 +4,41 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/img_bg_splash"
     tools:context=".Activity.Main.SplashActivity">
 
-    <ImageView
-        android:id="@+id/imv_logo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
-        android:src="@drawable/ic_logo" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/imv_logo"
-        android:gravity="center"
-        android:text="Xin chào"
-        android:textColor="@color/black"
-        android:textSize="34dp" />
 
     <LinearLayout
         android:id="@+id/ll_progress"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:background="@drawable/bg_layout_progressbar"
         android:gravity="center"
-        android:orientation="vertical"
-        android:paddingBottom="24dp">
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/tvProgressBarSplashDefault"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/ubuntu_medium"
             android:gravity="center"
-            android:text="Đang tải ... 0%"
-            android:textColor="@color/black"
+            android:text="Loading ... 0%"
+            android:textColor="@color/white"
             android:textSize="17dp" />
 
         <ProgressBar
             android:id="@+id/progressBarSplashDefault"
             style="?android:attr/progressBarStyleHorizontal"
             android:layout_width="match_parent"
-            android:layout_height="20dp"
+            android:layout_height="14dp"
             android:layout_marginHorizontal="56dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginVertical="16dp"
             android:max="200"
-            android:progress="0" />
-
-        <TextView
-            android:id="@+id/tvDescriptionAd"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="16dp"
-            android:textColor="@color/white"
-            android:textSize="12sp" />
+            android:progress="0"
+            android:progressDrawable="@drawable/custom_progress_bar_bg"
+            android:progressTint="#88B2F1" />
     </LinearLayout>
 
 </RelativeLayout>

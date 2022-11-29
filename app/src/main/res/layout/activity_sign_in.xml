@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_sign_in"
+    tools:context=".Activity.Main.SignInActivity">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="156dp"
+        android:fontFamily="@font/ubuntu_medium"
+        android:gravity="center"
+        android:text="Welcome"
+        android:textColor="#01265E"
+        android:textSize="36sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_title"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/ubuntu_regular"
+        android:gravity="center"
+        android:text="Sign in to start"
+        android:textColor="#9D9D9D"
+        android:textSize="16sp" />
+
+    <ImageView
+        android:id="@+id/imv_zenitsu"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:layout_above="@+id/btn_login"
+        android:src="@drawable/img_zenitsu" />
+
+    <TextView
+        android:id="@+id/btn_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginBottom="180dp"
+        android:background="@drawable/bg_btn_login"
+        android:drawableLeft="@drawable/ic_google"
+        android:drawablePadding="20dp"
+        android:elevation="4dp"
+        android:fontFamily="@font/ubuntu_medium"
+        android:gravity="center_vertical"
+        android:paddingVertical="10dp"
+        android:paddingStart="40dp"
+        android:text="Continue with Google"
+        android:textColor="#424242"
+        android:textSize="20sp"
+        tools:ignore="RtlHardcoded,RtlSymmetry,UseCompatTextViewDrawableXml" />
+</RelativeLayout>

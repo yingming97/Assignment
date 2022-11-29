@@ -94,4 +94,6 @@ abstract class BaseActivity<B : ViewBinding, VM : ViewModel>(val bindingFactory:
         overridePendingTransition()
     }
 
+    override fun onClick(v: View) {
+    }
 }

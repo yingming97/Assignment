@@ -15,7 +15,6 @@ class SplashViewModel : ViewModel() {
         val handler = Handler()
         val progress = intArrayOf(0)
 
-        @SuppressLint("SetTextI18n")
         val update = Runnable {
             if (progress[0] < 200) {
                 progress[0]++
@@ -31,6 +30,6 @@ class SplashViewModel : ViewModel() {
             override fun run() {
                 handler.post(update)
             }
-        }, 100, 10)
+        }, 300, 30)
     }
 }

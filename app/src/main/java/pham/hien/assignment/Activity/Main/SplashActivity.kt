@@ -10,31 +10,34 @@ import pham.hien.assignment.ViewModel.SplashViewModel
 import pham.hien.assignment.databinding.ActivitySplashBinding
 
 @SuppressLint("CustomSplashScreen")
-class SplashActivity : BaseActivity<ActivitySplashBinding, SplashViewModel>(ActivitySplashBinding::inflate) {
+class SplashActivity :
+    BaseActivity<ActivitySplashBinding, SplashViewModel>(ActivitySplashBinding::inflate) {
 
     override fun initListener() {
 
     }
+
     override fun getViewModel(): Class<SplashViewModel> {
         return SplashViewModel::class.java
     }
 
     override fun initDataDefault() {
-        val animation = AnimationUtils.loadAnimation(this, R.anim.slide_in_right)
-        binding.imvLogo.startAnimation(animation)
         viewModel.loadProgressBarSplashDefault()
     }
 
+    @SuppressLint("SetTextI18n")
     override fun initObserver() {
         viewModel.loadingSplashDefaultLiveData.observe(this) {
             binding.progressBarSplashDefault.progress = it
             binding.tvProgressBarSplashDefault.text = "Loading ... ${(it * 100 / 200)}%"
-            startActivity(Intent(this, MainActivity::class.java))
-            finish()
+            if (it == binding.progressBarSplashDefault.max) {
+                startActivity(Intent(this, SignInActivity::class.java))
+                finish()
+            }
         }
     }
 
-    override fun onClick(v: View?) {
+    override fun onClick(v: View) {
 
     }
 }

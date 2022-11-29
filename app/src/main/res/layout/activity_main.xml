@@ -1,19 +1,177 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".Activity.Main.MainActivity">
 
-    <TextView
-        android:id="@+id/tv"
+    <LinearLayout
+        android:id="@+id/layout_tool_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="40dp"
+        android:orientation="horizontal">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imv_avatar"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="5dp"
+            android:elevation="3dp"
+            android:src="@drawable/img_avatar_default"
+            app:civ_border_color="@color/white"
+            app:civ_border_width="2dp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:fontFamily="@font/ubuntu_medium"
+            android:maxLines="1"
+            android:padding="8dp"
+            android:text="Rou"
+            android:textColor="#424242"
+            android:textSize="16dp" />
+
+        <ImageView
+            android:id="@+id/imv_profile"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/img_profile" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout_search"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_below="@+id/layout_tool_bar"
+        android:layout_marginHorizontal="22dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/bg_ed_search"
+        android:elevation="5dp">
+
+        <EditText
+            android:id="@+id/ed_search"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toStartOf="@+id/imv_filter"
+            android:layout_toEndOf="@+id/imv_search"
+            android:background="@android:color/transparent"
+            android:fontFamily="@font/ubuntu_regular"
+            android:hint="Search manga"
+            android:maxLines="1"
+            android:textColorHint="#424242" />
+
+        <ImageView
+            android:id="@+id/imv_search"
+            android:layout_width="45dp"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:padding="10dp"
+            android:src="@drawable/ic_search" />
+
+        <ImageView
+            android:id="@+id/imv_filter"
+            android:layout_width="45dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:padding="10dp"
+            android:src="@drawable/ic_filter" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_below="@+id/layout_search"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:paddingHorizontal="34dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/tv_trending_manga"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/ubuntu_medium"
+            android:text="Trending Manga"
+            android:textColor="#424242"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/layout_read_continue"
+        android:layout_below="@+id/layout_title"
+        android:layout_marginTop="20dp"
+        android:paddingHorizontal="34dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcv_list_trending"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+    </androidx.core.widget.NestedScrollView>
+
+    <RelativeLayout
+        android:id="@+id/layout_read_continue"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/img_bg_read_continue"
+        android:paddingHorizontal="50dp">
+
+        <TextView
+            android:id="@+id/tv_read_continue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="34dp"
+            android:fontFamily="@font/ubuntu_medium"
+            android:text="Continue Reading"
+            android:textColor="@color/white"
+            android:textSize="16dp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_below="@+id/tv_read_continue"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bg_layout_read_continue"
+            android:paddingHorizontal="20dp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imv_manga"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/img_manga_default" />
+
+            <TextView
+                android:id="@+id/tv_manga_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:layout_toStartOf="@+id/imv_play"
+                android:layout_toEndOf="@+id/imv_manga"
+                android:fontFamily="@font/ubuntu_regular"
+                android:maxLines="2"
+                android:text="Naruto"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:id="@+id/imv_play"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_play" />
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,11 +1,13 @@
 package pham.hien.assignment.Activity.Main
 
+import android.content.Intent
 import android.util.Log
 import android.view.View
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import okhttp3.ResponseBody
 import pham.hien.assignment.API.ApiGetList
+import pham.hien.assignment.Activity.User.ProfileActivity
 import pham.hien.assignment.Model.User
 import pham.hien.assignment.ViewModel.MainViewModel
 import pham.hien.assignment.databinding.ActivityMainBinding
@@ -20,7 +22,11 @@ class MainActivity :
     private val TAG = "YingMing"
 
     override fun initListener() {
-
+        binding.imvAvatar.setOnClickListener(this)
+        binding.imvProfile.setOnClickListener(this)
+        binding.imvFilter.setOnClickListener(this)
+        binding.layoutReadContinue.setOnClickListener(this)
+        binding.layoutToolBar.setOnClickListener(this)
     }
 
     override fun getViewModel(): Class<MainViewModel> {
@@ -28,20 +34,19 @@ class MainActivity :
     }
 
     override fun initObserver() {
-        viewModel.mListUserLiveData.observe(this) {
-            Log.d(TAG, "initObserver: $it")
-            binding.tv.text = it.toString()
-        }
+
     }
 
     override fun initDataDefault() {
-        viewModel.getListUser()
-
     }
 
-    override fun onClick(v: View?) {
-
+    override fun onClick(v: View) {
+        when (v) {
+            binding.imvAvatar, binding.imvProfile, binding.layoutToolBar -> {
+                startActivity(Intent(this, ProfileActivity::class.java))
+            }
+            binding.imvFilter -> {}
+            binding.layoutReadContinue -> {}
+        }
     }
-
-
 }
