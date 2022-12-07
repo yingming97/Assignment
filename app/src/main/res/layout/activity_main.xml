@@ -5,6 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
+    android:descendantFocusability="beforeDescendants"
+    android:focusableInTouchMode="true"
     tools:context=".Activity.Main.MainActivity">
 
     <LinearLayout
@@ -26,6 +28,7 @@
             app:civ_border_width="2dp" />
 
         <TextView
+            android:id="@+id/tv_user"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
@@ -82,7 +85,8 @@
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:padding="10dp"
-            android:src="@drawable/ic_filter" />
+            android:src="@drawable/ic_filter"
+            android:visibility="gone" />
     </RelativeLayout>
 
     <LinearLayout
@@ -103,6 +107,16 @@
             android:textColor="#424242"
             android:textSize="18sp" />
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_no_data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layout_title"
+        android:gravity="center"
+        android:text="No data"
+        android:textColor="#EF1515"
+        android:visibility="gone" />
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"

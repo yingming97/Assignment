@@ -14,7 +14,7 @@ import java.util.concurrent.TimeUnit
 
 interface ApiGetList {
 
-    @GET("getuser.php")
+    @GET("get_list_user.php")
    suspend fun getListUser(): ArrayList<User>
 
 //    object Factory {

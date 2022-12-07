@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_item_book"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="20dp"
+    android:layout_marginVertical="5dp"
+    android:background="@drawable/bg_white_rd_10"
+    android:elevation="2dp"
+    android:paddingStart="14dp"
+    tools:ignore="MissingDefaultResource">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_book"
+        android:layout_width="60dp"
+        android:layout_height="80dp"
+        android:layout_marginVertical="10dp"
+        app:cardCornerRadius="10dp">
+
+        <ImageView
+            android:id="@+id/imv_book"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:elevation="5dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/img_book_default" />
+    </androidx.cardview.widget.CardView>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imv_avatar"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignTop="@+id/tv_tac_gia"
+        android:layout_margin="3dp"
+        android:layout_toEndOf="@+id/cv_book"
+        android:elevation="3dp"
+        android:src="@drawable/img_avatar_default"
+        app:civ_border_color="@color/white"
+        app:civ_border_width="2dp" />
+
+    <TextView
+        android:id="@+id/tv_tac_gia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="12dp"
+        android:layout_toEndOf="@+id/imv_avatar"
+        android:lines="1"
+        android:text="J. K. Rowling"
+        android:textColor="#1c4942"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_tac_gia"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="40dp"
+        android:layout_toEndOf="@+id/cv_book"
+        android:text="Harry Potter và hòn đá phù thủy"
+        android:textColor="#1c4942" />
+
+    <ImageView
+        android:id="@+id/imv_menu"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentEnd="true"
+        android:padding="8dp"
+        android:src="@drawable/ic_menu_book_item" />
+</RelativeLayout>

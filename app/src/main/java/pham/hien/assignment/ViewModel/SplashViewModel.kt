@@ -2,12 +2,19 @@ package pham.hien.assignment.ViewModel
 
 import android.annotation.SuppressLint
 import android.os.Handler
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.launch
+import pham.hien.assignment.API.ApiGetList
+import pham.hien.assignment.API.RetrofitHelper
+import retrofit2.create
 import java.util.*
 
 class SplashViewModel : ViewModel() {
 
+    private val TAG = "YingMing"
     private var timer: Timer? = null
     val loadingSplashDefaultLiveData = MutableLiveData<Int>()
 
@@ -31,5 +38,12 @@ class SplashViewModel : ViewModel() {
                 handler.post(update)
             }
         }, 300, 30)
+    }
+
+    fun getListUser() {
+        viewModelScope.launch {
+            val aipGetListUser = RetrofitHelper.getInstance().create<ApiGetList>()
+            Log.d(TAG, "getListUser: ${aipGetListUser.getListUser()}")
+        }
     }
 }

@@ -4,21 +4,24 @@ import android.animation.Animator
 import android.app.Activity
 import android.content.Context
 import android.util.AttributeSet
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.RelativeLayout
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.ViewModel
+import androidx.viewbinding.ViewBinding
 import pham.hien.assignment.Animation.AlphaAnimation
+import pham.hien.assignment.databinding.ViewPostedBinding
 
 
 abstract class BaseView : RelativeLayout, View.OnClickListener {
 
+    constructor(context: Context) : super(context) {}
+    constructor(context: Context, attrs: AttributeSet) : super(context, attrs) {}
 
-    constructor(context: Context?) : super(context) {}
-    constructor(context: Context?, attrs: AttributeSet?) : super(context, attrs) {}
+    open fun initView(context: Context, attrs: AttributeSet?) {}
 
-    open fun initView(context: Context?, attrs: AttributeSet?) {}
     open fun initViewModel(viewModel: ViewModel?) {}
     open fun initObserver(owner: LifecycleOwner?) {}
     open fun initDataDefault(activity: Activity?) {}
@@ -30,7 +33,7 @@ abstract class BaseView : RelativeLayout, View.OnClickListener {
 
         fun openViewGroup(viewGroup: ViewGroup, duration: Int) {
             if (viewGroup.visibility == GONE) {
-             AlphaAnimation().visibleAnimation(
+                AlphaAnimation().visibleAnimation(
                     viewGroup,
                     duration.toLong(),
                     object : Animator.AnimatorListener {

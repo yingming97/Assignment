@@ -3,9 +3,7 @@ package pham.hien.assignment.Activity.Main
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.view.View
-import android.view.animation.AnimationUtils
-import androidx.lifecycle.ViewModelProvider
-import pham.hien.assignment.R
+import pham.hien.assignment.Utils.SharedPrefUtils
 import pham.hien.assignment.ViewModel.SplashViewModel
 import pham.hien.assignment.databinding.ActivitySplashBinding
 
@@ -23,6 +21,7 @@ class SplashActivity :
 
     override fun initDataDefault() {
         viewModel.loadProgressBarSplashDefault()
+//        viewModel.getListUser()
     }
 
     @SuppressLint("SetTextI18n")
@@ -31,8 +30,13 @@ class SplashActivity :
             binding.progressBarSplashDefault.progress = it
             binding.tvProgressBarSplashDefault.text = "Loading ... ${(it * 100 / 200)}%"
             if (it == binding.progressBarSplashDefault.max) {
-                startActivity(Intent(this, SignInActivity::class.java))
-                finish()
+                if (SharedPrefUtils.getLoginInformationUser(this).firebaseId != "") {
+                    startActivity(Intent(this, MainActivity::class.java))
+                    finish()
+                } else {
+                    startActivity(Intent(this, SignInActivity::class.java))
+                    finish()
+                }
             }
         }
     }

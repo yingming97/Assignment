@@ -8,64 +8,102 @@
     android:paddingHorizontal="30dp"
     tools:context=".Activity.User.ProfileActivity">
 
+    <ImageView
+        android:id="@+id/imv_back"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="20dp"
+        android:padding="16dp"
+        android:src="@drawable/ic_arrow_left" />
+
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/imv_avatar"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_centerHorizontal="true"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignParentStart="true"
         android:layout_marginTop="80dp"
         android:elevation="5dp"
         android:src="@drawable/img_avatar_default" />
 
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/imv_avatar"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="24dp"
+        android:layout_toEndOf="@+id/imv_avatar"
+        android:fontFamily="@font/ubuntu_regular"
+        android:text="Rou"
+        android:textColor="#01265E"
+        android:textSize="20sp"
+        tools:ignore="RtlSymmetry" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@+id/imv_avatar"
+        android:layout_marginTop="10dp"
+        android:background="#45424242" />
+
     <LinearLayout
-        android:id="@+id/lnl_name"
+        android:id="@+id/layout_posted_liked"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/imv_avatar"
         android:layout_marginTop="20dp"
-        android:orientation="vertical">
+        android:orientation="horizontal"
+        android:weightSum="2">
 
         <TextView
-            android:id="@+id/tv_name"
-            android:layout_width="match_parent"
+            android:id="@+id/btn_posted"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:fontFamily="@font/ubuntu_regular"
-            android:paddingStart="20dp"
-            android:text="Rou"
-            android:textColor="#01265E"
-            android:textSize="20sp"
-            tools:ignore="RtlSymmetry" />
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_selected"
+            android:elevation="5dp"
+            android:fontFamily="@font/ubuntu_medium"
+            android:gravity="center"
+            android:paddingVertical="10dp"
+            android:text="Posted"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:background="#45424242" />
+        <TextView
+            android:id="@+id/btn_liked"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_unselected"
+            android:elevation="5dp"
+            android:fontFamily="@font/ubuntu_medium"
+            android:gravity="center"
+            android:paddingVertical="10dp"
+            android:text="Liked"
+            android:textColor="#424242"
+            android:textSize="20sp" />
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/lnl_email"
+    <com.zhpan.indicator.IndicatorView
+        android:id="@+id/iv_posted_liked"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/lnl_name"
-        android:orientation="vertical">
+        android:layout_height="5dp"
+        android:layout_below="@+id/layout_posted_liked"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="5dp"
+        android:minWidth="70dp"
+        app:vpi_slide_mode="worm"
+        app:vpi_slider_checked_color="#A2B2FC"
+        app:vpi_slider_normal_color="#9D9D9D"
+        app:vpi_style="round_rect" />
 
-        <TextView
-            android:id="@+id/tv_email"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:fontFamily="@font/ubuntu_regular"
-            android:paddingStart="20dp"
-            android:text="hienpvph18604@fpt.edu.vn"
-            android:textColor="#01265E"
-            android:textSize="20dp" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:background="#45424242" />
-    </LinearLayout>
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/vp_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/iv_posted_liked" />
 
     <TextView
         android:id="@+id/btn_done"
@@ -81,5 +119,6 @@
         android:paddingVertical="16dp"
         android:text="DONE"
         android:textColor="@color/white"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:visibility="gone" />
 </RelativeLayout>
